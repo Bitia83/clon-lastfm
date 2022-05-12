@@ -19,16 +19,21 @@ a{
 }
 
 /* Nav con logo Last.f */
+#nav-logo{
+    background-color: #222;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.5em;
+    margin-bottom: 2em;
+}
 
+nav>img{
+    width: 6em;
+}
 
 /* Imágenes con enlace a listas (header) */
-/* Filtros:
-rock:   sepia(90%);
-hip-hop:contrast(200%);
-indie:  grayscale(50%);
-jazz:   hue-rotate(90deg);
-reggae: saturate(10%);
-*/
 
 img {
     width: 100%; /* se necesita sobrescribir las dimensiones en línea */
@@ -81,15 +86,31 @@ header>section {
     justify-content: center;
 }
   
-.estilos-card:hover .estilos-musica {
+#rock:hover .estilos-musica {
     opacity: 1;
+    filter: sepia(90%);
+}
+
+#hip-hop:hover .estilos-musica {
+    opacity: 1;
+    filter: contrast(200%);
+}
+
+#indie:hover .estilos-musica {
+    opacity: 1;
+    filter: grayscale(50%);
+}
+
+#jazz:hover .estilos-musica {
+    opacity: 1;
+    filter: hue-rotate(90deg);
+}
+
+#reggae:hover .estilos-musica {
+    opacity: 1;
+    filter: saturate(10%);
 }
   
-.estilos-card:hover .estilos-image img {
-    filter: blur(2px);
-}
-
-
 /* Nav con enlaces a listas */
 
 
