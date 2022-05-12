@@ -10,15 +10,15 @@ body {
     background: #fff;
 }
 
-ul{
-    list-style-type: none;
-}
+
+
+
 
 a{
     text-decoration: none;
 }
 
-/* Nav con logo Last.f */
+/* Nav con logo Last.fm */
 #nav-logo{
     background-color: #222;
     height: 2em;
