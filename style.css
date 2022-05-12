@@ -1,3 +1,98 @@
+/* Estructura general */
+*{
+    font-family:Open Sans,Lucida Grande,Helvetica Neue,Helvetica,Arial,Sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 20px;
+    background: #fff;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Nav con logo Last.f */
+
+
+/* Imágenes con enlace a listas (header) */
+/* Filtros:
+rock:   sepia(90%);
+hip-hop:contrast(200%);
+indie:  grayscale(50%);
+jazz:   hue-rotate(90deg);
+reggae: saturate(10%);
+*/
+
+img {
+    width: 100%; /* se necesita sobrescribir las dimensiones en línea */
+    height: auto;
+}
+
+header>section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10%, 1fr));
+    grid-gap: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* hover styles */
+.estilos-card {
+    position: relative;
+}
+  
+.estilos-image {
+    line-height: 0;
+    overflow: hidden;
+}
+  
+.estilos-image img {
+    filter: blur(0px);
+    transition: filter 0.3s ease-in;
+    transform: scale(1.1);
+}
+  
+.estilos-musica {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .5s;
+    background: #B90000;
+    color: #fff;
+    /* centrar el texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.estilos-card:hover .estilos-musica {
+    opacity: 1;
+}
+  
+.estilos-card:hover .estilos-image img {
+    filter: blur(2px);
+}
+
+
+/* Nav con enlaces a listas */
+
+
 /* Colores:
    --color-primary:  #222
    --color-secondary: rgba(110, 69, 51, 1);
@@ -7,30 +102,5 @@
 
 */
 
-/* Imágenes:
-logo: https://www.last.fm/static/images/logo_static_mob.0798d7258e3d.png
-rock: https://lastfm.freetls.fastly.net/i/u/avatar300s/366962d5733a4aee8bee4a136c239d47.jpg
-hip-hop: https://lastfm.freetls.fastly.net/i/u/avatar300s/51810a59cb17449bb2d6b8b62d63ce78.jpg
-indie:https://lastfm.freetls.fastly.net/i/u/avatar300s/c825233e09af4641a5ce7b6ece883aae.jpg
-jazz:https://lastfm.freetls.fastly.net/i/u/avatar300s/c0a9af93c8c843afb43cd6dc24b0bbf3.jpg
-reggae: https://lastfm.freetls.fastly.net/i/u/avatar300s/94428d295a60403e9327cbfb86e2fbf6.jpg
-*/
-
-/* Filtros:
-
-rock:   sepia(90%);
-hip-hop:contrast(200%);
-indie:  grayscale(50%);
-jazz:   hue-rotate(90deg);
-reggae: saturate(10%);
-
-*/
-
-/* Fuente:
-    font-family:Open Sans,Lucida Grande,Helvetica Neue,Helvetica,Arial,Sans-serif;
-
-*/
-
 /* Utiliza  la propiedad counter-increment: step-counter; para pintar el número de la canción
  */
-
