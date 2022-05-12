@@ -113,6 +113,26 @@ header>section {
   
 /* Nav con enlaces a listas */
 
+#menu-lista {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ul-menu-lista{
+    padding-top: 40px;
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ul-menu-lista li {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.li-menu-lista:hover  {
+    color: #B90000;
+}
 
 /* Colores:
    --color-primary:  #222
