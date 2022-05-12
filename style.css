@@ -130,6 +130,10 @@ header>section {
     padding-right: 5px;
 }
 
+.li-menu-lista:hover  {
+    color: #B90000;
+}
+
 /* Colores:
    --color-primary:  #222
    --color-secondary: rgba(110, 69, 51, 1);
