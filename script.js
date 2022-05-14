@@ -25,5 +25,3 @@ fetch('music.json')
    // const nombreDeMusica = music.map((music) => music.name);
    // console.log(nombreDeMusica);
 // });
-
-
