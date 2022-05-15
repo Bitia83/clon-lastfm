@@ -1,10 +1,10 @@
-// let musicaElements = []
+ let musicaElements = []
 //fetch('music.json')
 // .then((response) => response.json())
 // .then((data) => console.log(data))
 //.then((music) => {
 //  let musicaElements = "";
-// for (let i = 0; i < music.length; i++) {
+// for (let i = 0; i < music.length; i++)
 //   musicaElements += `
 //         <tr>
 //       <td>${i + 1}</td>
