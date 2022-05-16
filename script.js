@@ -16,14 +16,16 @@ function cargarOverview() {
    // .then((data) => console.log(data))
   .then((music) => {
     let musicaElements = "";
-      music.sort((a, b) => {
-      if (a.listeners == b.listener) {
-        return 0;
-      } if (a.listeners > b.listeners) {
-        return -1;
-      }
-      return 1;
+    /* Inicio del código para que se ordenen los datos por número de listeners de mayor a menor */
+    music.sort((a, b) => {
+    if (a.listeners == b.listener) {
+      return 0;
+    } if (a.listeners > b.listeners) {
+      return -1;
+    }
+    return 1;
     });
+    /* Fin del código para que se ordenen los datos por número de listeners de mayor a menor */
     for (let i = 0; i < music.length; i++) {
     musicaElements += `
           <tr>
@@ -63,15 +65,17 @@ function cargarOverview() {
     .then((music) => {
       let musicaElements = "";
       let rockArray = music.filter(music => music.genres.includes ('rock'));
-     // console.log(rockArray);
-    rockArray.sort((a, b) => {
-      if (a.listeners == b.listener) {
-        return 0;
-      } if (a.listeners > b.listeners) {
-        return -1;
-      }
-      return 1;
-    });
+      // console.log(rockArray);
+      /* Inicio del código para que se ordenen los datos por número de listeners de mayor a menor */
+      rockArray.sort((a, b) => {
+        if (a.listeners == b.listener) {
+          return 0;
+        } if (a.listeners > b.listeners) {
+          return -1;
+        }
+        return 1;
+      });
+      /* Fin del código para que se ordenen los datos por número de listeners de mayor a menor */
       rockArray.forEach((music, i) => {
         musicaElements += `
           <tr>
@@ -94,6 +98,16 @@ function cargarOverview() {
     let musicaElements = "";
     let hipHopArray = music.filter(music => music.genres.includes ('Hip-Hop'));
     console.log(hipHopArray);
+    /* Inicio del código para que se ordenen los datos por número de listeners de mayor a menor */
+    hipHopArray.sort((a, b) => {
+      if (a.listeners == b.listener) {
+        return 0;
+      } if (a.listeners > b.listeners) {
+        return -1;
+      }
+      return 1;
+    });   
+    /* Fin del código para que se ordenen los datos por número de listeners de mayor a menor */
     hipHopArray.forEach((music, i) => {
       musicaElements += `
         <tr>
@@ -116,6 +130,16 @@ function cargarOverview() {
     let musicaElements = "";
     let indieArray = music.filter(music => music.genres.includes ('indie'));
     console.log(indieArray);
+    /* Inicio del código para que se ordenen los datos por número de listeners de mayor a menor */
+    indieArray.sort((a, b) => {
+      if (a.listeners == b.listener) {
+        return 0;
+      } if (a.listeners > b.listeners) {
+        return -1;
+      }
+      return 1;
+    });
+    /* Fin del código para que se ordenen los datos por número de listeners de mayor a menor */
     indieArray.forEach((music, i) => {
       musicaElements += `
         <tr>
@@ -137,6 +161,16 @@ function cargarJazz() {
     let musicaElements = "";
     let jazzArray = music.filter(music => music.genres.includes ('jazz'));
     console.log(jazzArray);
+    /* Inicio del código para que se ordenen los datos por número de listeners de mayor a menor */
+    jazzArray.sort((a, b) => {
+      if (a.listeners == b.listener) {
+        return 0;
+      } if (a.listeners > b.listeners) {
+        return -1;
+      }
+      return 1;
+    });
+    /* Fin del código para que se ordenen los datos por número de listeners de mayor a menor */
     jazzArray.forEach((music, i) => {
       musicaElements += `
         <tr>
@@ -157,6 +191,16 @@ function cargarJazz() {
       let musicaElements = "";
       let reggaeArray = music.filter(music => music.genres.includes ('reggae'));
       console.log(reggaeArray);
+      /* Inicio del código para que se ordenen los datos por número de listeners de mayor a menor */
+      reggaeArray.sort((a, b) => {
+        if (a.listeners == b.listener) {
+          return 0;
+        } if (a.listeners > b.listeners) {
+          return -1;
+        }
+        return 1;
+      });
+      /* Fin del código para que se ordenen los datos por número de listeners de mayor a menor */
       reggaeArray.forEach((music, i) => {
         musicaElements += `
           <tr>
@@ -176,5 +220,3 @@ function cargarJazz() {
    // const nombreDeMusica = music.map((music) => music.name);
    // console.log(nombreDeMusica);
 // });
-
-
