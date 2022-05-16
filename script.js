@@ -16,7 +16,7 @@
 //  document.getElementById('music-body').innerHTML = musicaElements
 //   });
 // crear una funcion para un lista rock
-function listRock() {
+/*function listRock() {
   fetch('music.json')
     .then((response) => response.json())
     .then((music) => {
@@ -35,7 +35,7 @@ function listRock() {
     });
 }
 
-;
+;*/
    // const nombreDeMusica = music.map((music) => music.name);
    // console.log(nombreDeMusica);
 // });
