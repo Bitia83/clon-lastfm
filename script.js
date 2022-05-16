@@ -5,7 +5,7 @@ document.getElementById(`overview`).addEventListener(`click`, cargarOverview);//
 document.getElementById(`rock`).addEventListener(`click`, listRock);//US 4: ver listado rock al hacer click en rock
 document.getElementById(`hip-hop`).addEventListener(`click`, cargarHipHop);//US 5: ver lista hip hopal hacer click en  hip-hop
 document.getElementById(`indie`).addEventListener(`click`, cargarIndie);//US 6: ver lista indie al hacer click en indie
-//document.getElementById(`indie`).addEventListener(`click`, cargarIndie);//US 7: ver lista jazz al hacer click en jazz
+document.getElementById(`jazz`).addEventListener(`click`, cargarJazz);//US 7: ver lista jazz al hacer click en jazz
 document.getElementById(`reggae`).addEventListener(`click`, cargarReggae);//US 8: lista reggae al hacer click en  reggae
 
 //Funciones
@@ -114,7 +114,25 @@ function cargarOverview() {
 };
 
 //US 7: ver lista jazz
-
+function cargarJazz() {
+  fetch('music.json')
+  .then((response) => response.json())
+  .then((music) => {
+    let musicaElements = "";
+    let jazzArray = music.filter(music => music.genres.includes ('jazz'));
+    console.log(jazzArray);
+    jazzArray.forEach((music, i) => {
+      musicaElements += `
+        <tr>
+        <td>${i + 1}</td>
+        <td> ${music.artist.name}</td>
+        <td><b>${music.name}</b></td>
+        <td> ${music.listeners}</td>
+        </tr`;
+    });
+    document.getElementById('music-body').innerHTML = musicaElements;
+  });
+};
  // US 8: ver lista reggae
   function cargarReggae() {
     fetch('music.json')
