@@ -9,15 +9,15 @@ function cargarOverview() {
    // .then((data) => console.log(data))
   .then((music) => {
     let musicaElements = "";
-    for (let i = 0; i < music.length; i++) { <tr>
+    for (let i = 0; i < music.length; i++) {
+    musicaElements += `
+          <tr>
         <td>${i + 1}</td>
         <td> ${music[i].artist.name}</td>
        <td><b>${music[i].name}</b></td>
        <td> ${music[i].listeners}</td>
         </tr>`;
     }
-    musicaElements += `
-         
   document.getElementById('music-body').innerHTML = musicaElements
     });
 };
