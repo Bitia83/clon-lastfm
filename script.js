@@ -1,5 +1,6 @@
 // let musicaElements = []
-  fetch('music.json')
+
+fetch('music.json')
  .then((response) => response.json())
   // .then((data) => console.log(data))
  .then((music) => {
@@ -38,3 +39,5 @@
    // const nombreDeMusica = music.map((music) => music.name);
    // console.log(nombreDeMusica);
 // });
+
+
