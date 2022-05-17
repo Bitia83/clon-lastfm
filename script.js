@@ -1,7 +1,7 @@
 //Eventos
 window.addEventListener("load", cargarOverview);// US 1: carga de página inicial. Al cargar la pagina carga el overview.
 document.getElementById(`overview`).addEventListener(`click`, cargarOverview);//US 2: ver listado Overview al hacer click en overview
-//document.getElementById(`top10`).addEventListener(`click`, name_function  );//US 3: ver listado top 10 al hacer click en top ten
+document.getElementById(`top10`).addEventListener(`click`, cargarTop10  );//US 3: ver listado top 10 al hacer click en top ten
 document.getElementById(`rock`).addEventListener(`click`, listRock);//US 4: ver listado rock al hacer click en rock
 document.getElementById(`hip-hop`).addEventListener(`click`, cargarHipHop);//US 5: ver lista hip hopal hacer click en  hip-hop
 document.getElementById(`indie`).addEventListener(`click`, cargarIndie);//US 6: ver lista indie al hacer click en indie
@@ -56,7 +56,35 @@ function cargarOverview() {
    });*/
 
 // US 3: ver listado top 10
-
+function cargarTop10() {
+    fetch('music.json')
+  .then((response) => response.json())
+   // .then((data) => console.log(data))
+  .then((music) => {
+    let musicaElements = "";
+    /* Inicio del código para que se ordenen los datos por número de listeners de mayor a menor */
+    music.sort((a, b) => {
+    if (a.listeners == b.listener) {
+      return 0;
+    } if (a.listeners > b.listeners) {
+      return -1;
+    }
+    return 1;
+    });
+    /* Fin del código para que se ordenen los datos por número de listeners de mayor a menor */
+   
+    for (let i = 0; i < music.length; i++) {
+    musicaElements += `
+          <tr>
+        <td>${i + 1}</td>
+        <td> ${music[i].artist.name}</td>
+       <td><b>${music[i].name}</b></td>
+       <td> ${music[i].listeners}</td>
+        </tr>`;
+    }
+  document.getElementById('music-body').innerHTML = musicaElements;
+    });
+}
 
 // US 4: ver listado rock
   function listRock() {
