@@ -11,8 +11,37 @@ document.getElementById(`reggae`).addEventListener(`click`, cargarReggae);//US 8
 // lista para hacer click en the biggest
 document.getElementById(`biggest`).addEventListener(`click`, cargarTheBiggest);
 //Funciones
-//US 1: carga de página inicial. US 2: ver listado Overview. Carga las 50 caciones más escuchadas
 
+function cargarPage() {
+  fetch('music.json')
+  .then((response) => response.json())
+    
+  .then((music) => {
+    let musicaElements = "";
+    /* Inicio del código para que se ordenen los datos por número de listeners de may */
+    music.sort((a, b) => {
+     let listenersA = parseInt(a.listeners);
+      let listenersB = parseInt(b.listeners);
+      return listenersB - listenersA;
+      });
+     console.log(music);
+    /* Fin del código para que se ordenen los datos por número de listeners de mayor */
+    for (let i = 0; i < music.length; i++) {
+    musicaElements += `
+         <tr>
+          <td><a><i class="fa-solid fa-play"></i></a></td>
+          <td>${i + 1}</td>
+          <td><a href= ${music[i].artist.url}> ${music[i].artist.name}</a></td>
+          <td><a href= ${music[i].url}><b>${music[i].name}</b></a></td>
+          <td> ${music[i].listeners}</td>
+         </tr>`;
+    }
+  
+  document.getElementById('music-body').innerHTML = musicaElements;
+    });
+    };
+
+//US 1: carga de página inicial. US 2: ver listado Overview. Carga las 50 caciones más escuchadas
 
 
 function cargarOverview() {
@@ -43,22 +72,6 @@ function cargarOverview() {
   document.getElementById('music-body').innerHTML = musicaElements;
     });
     };
-  /*fetch('music.json')
- .then((response) => response.json())
-  // .then((data) => console.log(data))
- .then((music) => {
-   let musicaElements = "";
-   for (let i = 0; i < music.length; i++) {
-   musicaElements += `
-         <tr>
-       <td>${i + 1}</td>
-       <td> ${music[i].artist.name}</td>
-      <td><b>${music[i].name}</b></td>
-      <td> ${music[i].listeners}</td>
-       </tr>`;
-   }
- document.getElementById('music-body').innerHTML = musicaElements
-   });*/
 
 // US 3: ver listado top 10
 function cargarTenList() {

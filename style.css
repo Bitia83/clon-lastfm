@@ -141,12 +141,28 @@ section{
     /*background-color: black;*/
 }
 
-table{
-    width: 100%;
-}
+    table {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+     
+        width: 100%;
+      }
 
+      table tr {
+        border: 1px solid #ddd;
+        padding: .35em;
+      }
 
-
+      table td {
+        padding: .625em;
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      table tr:nth-child(even) {
+        background: #f8f8f8;  
+      }
 /* Colores:
    --color-primary:  #222
    --color-secondary: rgba(110, 69, 51, 1);
