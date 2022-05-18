@@ -1,15 +1,25 @@
 //Eventos
-window.addEventListener("load", cargarOverview);// US 1: carga de página inicial. Al cargar la pagina carga el overview.
+window.addEventListener("load",  cargarOverview);// US 1: carga de página inicial. Al cargar la pagina carga el overview.
+window.addEventListener("load",  createOverview);
 document.getElementById(`overview`).addEventListener(`click`, cargarOverview);//US 2: ver listado Overview al hacer click en overview
+document.getElementById(`overview`).addEventListener(`click`, createOverview);
 document.getElementById(`top10`).addEventListener(`click`, cargarTenList);//US 3: ver listado top 10 al hacer click en top ten
-document.getElementById(`rock`).addEventListener(`click`, listRock);//US 4: ver listado rock al hacer click en rock
+document.getElementById(`top10`).addEventListener(`click`, createTop10);
+document.getElementById(`rock`).addEventListener(`click`,  listRock);//US 4: ver listado rock al hacer click en rock
+document.getElementById(`rock`).addEventListener(`click`,  createRock);
 document.getElementById(`hip-hop`).addEventListener(`click`, cargarHipHop);//US 5: ver lista hip hopal hacer click en  hip-hop
+document.getElementById(`hip-hop`).addEventListener(`click`, createHipHop);
 document.getElementById(`indie`).addEventListener(`click`, cargarIndie);//US 6: ver lista indie al hacer click en indie
+document.getElementById(`indie`).addEventListener(`click`, createIndie);
 document.getElementById(`jazz`).addEventListener(`click`, cargarJazz);//US 7: ver lista jazz al hacer click en jazz
+document.getElementById(`jazz`).addEventListener(`click`, createJazz);
 document.getElementById(`reggae`).addEventListener(`click`, cargarReggae);//US 8: lista reggae al hacer click en  reggae
+document.getElementById(`reggae`).addEventListener(`click`, createReggae);//US 8: lista reggae al hacer click en  reggae
+document.getElementById(`biggest`).addEventListener(`click`, cargarTheBiggest);
+document.getElementById(`biggest`).addEventListener(`click`, createBiggest);
 
 // lista para hacer click en the biggest
-document.getElementById(`biggest`).addEventListener(`click`, cargarTheBiggest);
+
 //Funciones
 //US 1: carga de página inicial. US 2: ver listado Overview. Carga las 50 caciones más escuchadas
 
@@ -276,10 +286,30 @@ function cargarTheBiggest() {
     })
 };
  
-
-
-      
-  
+function createOverview() {
+  document.getElementById(`title`).textContent="Overview";
+}
+function createTop10() {
+  document.getElementById(`title`).textContent="Top 10 Listened";
+}
+function createRock() {
+  document.getElementById(`title`).textContent="Rock";
+}
+function createHipHop() {
+  document.getElementById(`title`).textContent="Hip Hop";
+}     
+function createIndie() {
+  document.getElementById(`title`).textContent="Indie";
+}   
+function createJazz() {
+  document.getElementById(`title`).textContent="Jazz";
+}   
+function createReggae() {
+  document.getElementById(`title`).textContent="Reggae";
+}    
+function createBiggest(){
+  document.getElementById(`title`).textContent="The Biggest";
+}   
          
       // genres.includes ('reggae'));
        
