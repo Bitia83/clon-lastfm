@@ -98,7 +98,7 @@ function cargarTenList() {
             <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
             <td><a href= ${music.url}><b>${music.name}</b></a></td>
             <td> ${music.listeners} listener</td>
-        </tr`;
+        </tr>`;
     });
     document.getElementById('music-body').innerHTML = musicaElements;
   });
@@ -127,7 +127,7 @@ function cargarTenList() {
             <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
             <td><a href= ${music.url}><b>${music.name}</b></a></td>
             <td> ${music.listeners} listeners</td>
-          </tr`;
+          </tr>`;
       });
       document.getElementById('music-body').innerHTML = musicaElements;
     });
@@ -157,7 +157,7 @@ function cargarTenList() {
         <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
         <td><a href= ${music.url}><b>${music.name}</b></a></td>
         <td> ${music.listeners}</td>
-      </tr`;
+      </tr>`;
     });
     document.getElementById('music-body').innerHTML = musicaElements;
   });
@@ -187,7 +187,7 @@ function cargarTenList() {
         <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
         <td><a href= ${music.url}><b>${music.name}</b></a></td>
         <td> ${music.listeners} listeners</td>
-      </tr`;
+      </tr>`;
     });
     document.getElementById('music-body').innerHTML = musicaElements;
   });
@@ -216,7 +216,7 @@ function cargarJazz() {
         <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
         <td><a href= ${music.url}><b>${music.name}</b></a></td>
         <td> ${music.listeners} listener</td>
-      </tr`;
+      </tr>`;
     });
     document.getElementById('music-body').innerHTML = musicaElements;
   });
@@ -245,7 +245,7 @@ function cargarJazz() {
           <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
           <td><a href= ${music.url}><b>${music.name}</b></a></td>
           <td> ${music.listeners} listeners</td>
-        </tr`;
+        </tr>`;
       });
       document.getElementById('music-body').innerHTML = musicaElements;
     });
@@ -257,11 +257,11 @@ function cargarTheBiggest() {
     .then((response) => response.json())
     .then(function (music) {
       let musicaElements = "";
-      let artistArray = music.reduce((artistSinRepetir, musicArtist) => {
-        if (!artistSinRepetir.find(d => d == musicArtist.artist.name)) {
-          artistSinRepetir.push(musicArtist.artist.name)
+      let artistArray = music.reduce((t, musicArtist) => {
+        if (!t.find(d => d == musicArtist.artist.name)) {
+          t.push(musicArtist.artist.name)
         }
-        return artistSinRepetir;
+        return t;
       }, [])
       console.log(artistArray);
       
@@ -297,13 +297,13 @@ function cargarTheBiggest() {
       
       biggestArray.forEach((music, i) => {
         musicaElements += `
-        <tr>
+          <tr>
           <td><a><i class="fa-solid fa-play"></i></a></td>
           <td>${i + 1}</td>
           <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
           <td><a href= ${music.url}><b>${music.name}</b></a></td>
           <td> ${music.listeners} listeners</td>
-        </tr`;
+          </tr>`;
       });
     
       document.getElementById('music-body').innerHTML = musicaElements;
