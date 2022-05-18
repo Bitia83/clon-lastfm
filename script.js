@@ -250,54 +250,57 @@ function cargarJazz() {
 function cargarTheBiggest() {
   fetch('music.json')
     .then((response) => response.json())
-    .then((music) => {
+    .then(function (music) {
       let musicaElements = "";
-      /*   music.sort((a, b) => {
-           return a.name - b.name;
-         });
-         */
-      const biggestList = music.reduce((t, music) => {
-        t[music.artist.name] = ++t[music.artist.name] || 0;
-        return t;
-      }, {});
+      let artistArray = music.reduce((artistSinRepetir, musicArtist) => {
+        if (!artistSinRepetir.find(d => d == musicArtist.artist.name)) {
+          artistSinRepetir.push(musicArtist.artist.name)
+        }
+        return artistSinRepetir;
+      }, [])
+      console.log(artistArray);
       
-     const biggestArray = music.filter(music => music.artist.name );
-      console.log(biggestArray);
+      artistArray = artistArray.map(function (elemento) {
+        return { name: elemento };
+      });
+      console.log(artistArray)
+    
+
+      artistArray.forEach((artist) => {
+        let filter = music.filter(a => a.artist.name.includes(artist.name))
+        console.log(filter);
+       
+        let contador = filter.reduce((a, b) => a + parseInt(b.listeners), 0)
+        artist.listeners = contador;
+      })
+
+      console.log(artistArray);
+      let musicOrdenado = artistArray.sort(function (a, b) {
+        if (a.listeners > b.listeners) {
+          return -1;
+        } else if (a.listeners < b.listeners) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+      // console.log(musicOrdenado);
+      let grupoBiggest = musicOrdenado[0].name;
+      let biggestArray = music.filter(music => music.artist.name.includes(grupoBiggest))
+     
+      
+      
       biggestArray.forEach((music, i) => {
         musicaElements += `
             <tr>
             <td>${i + 1}</td>
-         <td> ${music.artist.name}</td>
-        <td><b>${music.name}</b></td>
-         <td> ${music.listeners}</td>
+            <td> ${music.artist.name}</td>
+           <td><b>${music.name}</b></td>
+            <td> ${music.listeners}</td>
             </tr`;
       });
+    
       document.getElementById('music-body').innerHTML = musicaElements;
     })
 };
- 
 
-
-      
-  
-         
-      // genres.includes ('reggae'));
-       
-        /* Fin del código para que se ordenen los datos p
-   número de listeners 
-       de 
-        mayor a menor 
-        -------------
-          biggestArray.forEach((music, i) => {
-             musicaElements += `
-          <tr>
-          <td>${i + 1}</td>
-          <td> ${music.artist.name}</td>
-          <td><b>${music.name}</b></td>
-          <td> ${music.listeners}</td>
-          </tr`;
-      });
-      document.getElementById('music-body').innerHTML = 
-   musicaElements;
-    });
-   }; */
