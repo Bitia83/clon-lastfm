@@ -144,14 +144,14 @@ section{
 }
 
     table {
-        border: 1px solid #ccc;
+        border:   #ccc;
         border-collapse: collapse;
-     
-        width: 100%;
-      }
+         width: 100%;
+         
+         }
 
       table tr {
-        border: 1px solid #ddd;
+        border:  1px #ddd;
         padding: .35em;
         text-decoration: none;
         color: #000000;
@@ -165,7 +165,7 @@ section{
         text-overflow: ellipsis;
       }
       table tr:nth-child(even) {
-        background: #f8f8f8;  
+        background: #E6E6E6;  
       }
       
 /* Colores:
