@@ -21,8 +21,37 @@ document.getElementById(`biggest`).addEventListener(`click`, createBiggest);
 // lista para hacer click en the biggest
 
 //Funciones
-//US 1: carga de página inicial. US 2: ver listado Overview. Carga las 50 caciones más escuchadas
 
+function cargarPage() {
+  fetch('music.json')
+  .then((response) => response.json())
+    
+  .then((music) => {
+    let musicaElements = "";
+    /* Inicio del código para que se ordenen los datos por número de listeners de may */
+    music.sort((a, b) => {
+     let listenersA = parseInt(a.listeners);
+      let listenersB = parseInt(b.listeners);
+      return listenersB - listenersA;
+      });
+     console.log(music);
+    /* Fin del código para que se ordenen los datos por número de listeners de mayor */
+    for (let i = 0; i < music.length; i++) {
+    musicaElements += `
+         <tr>
+          <td><a><i class="fa-solid fa-play"></i></a></td>
+          <td>${i + 1}</td>
+          <td><a href= ${music[i].artist.url}> ${music[i].artist.name}</a></td>
+          <td><a href= ${music[i].url}><b>${music[i].name}</b></a></td>
+          <td> ${music[i].listeners}</td>
+         </tr>`;
+    }
+  
+  document.getElementById('music-body').innerHTML = musicaElements;
+    });
+    };
+
+//US 1: carga de página inicial. US 2: ver listado Overview. Carga las 50 caciones más escuchadas
 
 
 function cargarOverview() {
@@ -46,29 +75,13 @@ function cargarOverview() {
           <td>${i + 1}</td>
           <td><a href= ${music[i].artist.url}> ${music[i].artist.name}</a></td>
           <td><a href= ${music[i].url}><b>${music[i].name}</b></a></td>
-          <td> ${music[i].listeners}</td>
+          <td> ${music[i].listeners} listener</td>
          </tr>`;
     }
   
   document.getElementById('music-body').innerHTML = musicaElements;
     });
     };
-  /*fetch('music.json')
- .then((response) => response.json())
-  // .then((data) => console.log(data))
- .then((music) => {
-   let musicaElements = "";
-   for (let i = 0; i < music.length; i++) {
-   musicaElements += `
-         <tr>
-       <td>${i + 1}</td>
-       <td> ${music[i].artist.name}</td>
-      <td><b>${music[i].name}</b></td>
-      <td> ${music[i].listeners}</td>
-       </tr>`;
-   }
- document.getElementById('music-body').innerHTML = musicaElements
-   });*/
 
 // US 3: ver listado top 10
 function cargarTenList() {
@@ -94,8 +107,8 @@ function cargarTenList() {
             <td>${i + 1}</td>
             <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
             <td><a href= ${music.url}><b>${music.name}</b></a></td>
-            <td> ${music.listeners}</td>
-        </tr`;
+            <td> ${music.listeners} listener</td>
+        </tr>`;
     });
     document.getElementById('music-body').innerHTML = musicaElements;
   });
@@ -123,8 +136,8 @@ function cargarTenList() {
             <td>${i + 1}</td>
             <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
             <td><a href= ${music.url}><b>${music.name}</b></a></td>
-            <td> ${music.listeners}</td>
-          </tr`;
+            <td> ${music.listeners} listeners</td>
+          </tr>`;
       });
       document.getElementById('music-body').innerHTML = musicaElements;
     });
@@ -154,7 +167,7 @@ function cargarTenList() {
         <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
         <td><a href= ${music.url}><b>${music.name}</b></a></td>
         <td> ${music.listeners}</td>
-      </tr`;
+      </tr>`;
     });
     document.getElementById('music-body').innerHTML = musicaElements;
   });
@@ -183,8 +196,8 @@ function cargarTenList() {
         <td>${i + 1}</td>
         <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
         <td><a href= ${music.url}><b>${music.name}</b></a></td>
-        <td> ${music.listeners}</td>
-      </tr`;
+        <td> ${music.listeners} listeners</td>
+      </tr>`;
     });
     document.getElementById('music-body').innerHTML = musicaElements;
   });
@@ -212,8 +225,8 @@ function cargarJazz() {
         <td>${i + 1}</td>
         <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
         <td><a href= ${music.url}><b>${music.name}</b></a></td>
-        <td> ${music.listeners}</td>
-      </tr`;
+        <td> ${music.listeners} listener</td>
+      </tr>`;
     });
     document.getElementById('music-body').innerHTML = musicaElements;
   });
@@ -224,7 +237,7 @@ function cargarJazz() {
     .then((response) => response.json())
     .then((music) => {
       let musicaElements = "";
-      let reggaeArray = music.filter(music => music.genres.includes ('reggae'));
+      let reggaeArray = music.filter(music => music.genres.includes ('chillout'));
       console.log(reggaeArray);
       /* Inicio del código para que se ordenen los datos por número de listeners de mayor a menor */
       reggaeArray.sort((a, b) => {
@@ -241,47 +254,68 @@ function cargarJazz() {
           <td>${i + 1}</td>
           <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
           <td><a href= ${music.url}><b>${music.name}</b></a></td>
-          <td> ${music.listeners}</td>
-        </tr`;
+          <td> ${music.listeners} listeners</td>
+        </tr>`;
       });
       document.getElementById('music-body').innerHTML = musicaElements;
     });
   };
 
-  /* Inicio del código para que se ordenen los datos por número de listeners 
- de 
-   mayor a menor */
-    
-   
-  // crear lista de biggest
-
 
 function cargarTheBiggest() {
   fetch('music.json')
     .then((response) => response.json())
-    .then((music) => {
+    .then(function (music) {
       let musicaElements = "";
-      /*   music.sort((a, b) => {
-           return a.name - b.name;
-         });
-         */
-      const biggestList = music.reduce((t, music) => {
-        t[music.artist.name] = ++t[music.artist.name] || 0;
+      let artistArray = music.reduce((t, musicArtist) => {
+        if (!t.find(d => d == musicArtist.artist.name)) {
+          t.push(musicArtist.artist.name)
+        }
         return t;
-      }, {});
+      }, [])
+      console.log(artistArray);
       
-     const biggestArray = music.filter(music => music.artist.name );
-      console.log(biggestArray);
+      artistArray = artistArray.map(function (elemento) {
+        return { name: elemento };
+      });
+      console.log(artistArray)
+    
+
+      artistArray.forEach((artist) => {
+        let filter = music.filter(a => a.artist.name.includes(artist.name))
+        console.log(filter);
+       
+        let contador = filter.reduce((a, b) => a + parseInt(b.listeners), 0)
+        artist.listeners = contador;
+      })
+
+      console.log(artistArray);
+      let musicOrdenado = artistArray.sort(function (a, b) {
+        if (a.listeners > b.listeners) {
+          return -1;
+        } else if (a.listeners < b.listeners) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+      // console.log(musicOrdenado);
+      let grupoBiggest = musicOrdenado[0].name;
+      let biggestArray = music.filter(music => music.artist.name.includes(grupoBiggest))
+     
+      
+      
       biggestArray.forEach((music, i) => {
         musicaElements += `
-        <tr>
+          <tr>
           <td><a><i class="fa-solid fa-play"></i></a></td>
           <td>${i + 1}</td>
           <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
           <td><a href= ${music.url}><b>${music.name}</b></a></td>
-          <td> ${music.listeners}</td>
-        </tr`;
+          <td> ${music.listeners} listeners</td>
+          </tr>`;
       });
+    
       document.getElementById('music-body').innerHTML = musicaElements;
     })
 };

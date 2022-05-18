@@ -3,6 +3,7 @@
     font-family:Open Sans,Lucida Grande,Helvetica Neue,Helvetica,Arial,Sans-serif;
     margin: 0;
     padding: 0;
+
 }
 
 body {
@@ -16,6 +17,7 @@ ul  {
 
 a{
     text-decoration: none;
+    color:#000000;
 }
 
 /* Nav con logo Last.fm */
@@ -115,13 +117,12 @@ header>section {
 
 #menu-lista {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    margin-bottom: 2em;
+    margin-bottom: 30px;
 }
 .ul-menu-lista{
     padding-top: 40px;
-    
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -146,6 +147,7 @@ h1 {
 
 table{
     width: 100%;
+    border:   #ccc;
 }
 
 tbody tr:nth-child(odd) {
@@ -155,7 +157,22 @@ tbody tr:nth-child(odd) {
   tbody tr:nth-child(even) {
     background-color: rgba(183, 255, 0, 0.495);
   }
+   
 
+table tr {
+    border:  1px #ddd;
+    padding: .35em;
+    text-decoration: none;
+ }
+
+table td {
+    padding: .625em;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+      
+      
 /* Colores:
    --color-primary:  #222
    --color-secondary: rgba(110, 69, 51, 1);
