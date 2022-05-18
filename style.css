@@ -115,20 +115,20 @@ header>section {
 
 #menu-lista {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    margin-bottom: 2em;
+    margin-bottom: 6em;
 }
 .ul-menu-lista{
-    padding-top: 40px;
-    width: 25%;
+    padding-top: 90px ;
+    width: 60%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
+   
 }
 .ul-menu-lista li {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 17px;
+    padding-right: 17px;
 }
 
 .li-menu-lista:hover  {
