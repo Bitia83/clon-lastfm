@@ -117,6 +117,7 @@ header>section {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2em;
 }
 .ul-menu-lista{
     padding-top: 40px;
@@ -133,6 +134,18 @@ header>section {
 .li-menu-lista:hover  {
     color: #B90000;
 }
+
+/* Main */
+section{
+    width: 100%;
+    /*background-color: black;*/
+}
+
+table{
+    width: 100%;
+}
+
+
 
 /* Colores:
    --color-primary:  #222
