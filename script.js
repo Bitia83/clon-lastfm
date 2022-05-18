@@ -65,7 +65,7 @@ function cargarOverview() {
           <td>${i + 1}</td>
           <td><a href= ${music[i].artist.url}> ${music[i].artist.name}</a></td>
           <td><a href= ${music[i].url}><b>${music[i].name}</b></a></td>
-          <td> ${music[i].listeners}</td>
+          <td> ${music[i].listeners} listener</td>
          </tr>`;
     }
   
@@ -97,7 +97,7 @@ function cargarTenList() {
             <td>${i + 1}</td>
             <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
             <td><a href= ${music.url}><b>${music.name}</b></a></td>
-            <td> ${music.listeners}</td>
+            <td> ${music.listeners} listener</td>
         </tr`;
     });
     document.getElementById('music-body').innerHTML = musicaElements;
@@ -126,7 +126,7 @@ function cargarTenList() {
             <td>${i + 1}</td>
             <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
             <td><a href= ${music.url}><b>${music.name}</b></a></td>
-            <td> ${music.listeners}</td>
+            <td> ${music.listeners} listeners</td>
           </tr`;
       });
       document.getElementById('music-body').innerHTML = musicaElements;
@@ -186,7 +186,7 @@ function cargarTenList() {
         <td>${i + 1}</td>
         <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
         <td><a href= ${music.url}><b>${music.name}</b></a></td>
-        <td> ${music.listeners}</td>
+        <td> ${music.listeners} listeners</td>
       </tr`;
     });
     document.getElementById('music-body').innerHTML = musicaElements;
@@ -215,7 +215,7 @@ function cargarJazz() {
         <td>${i + 1}</td>
         <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
         <td><a href= ${music.url}><b>${music.name}</b></a></td>
-        <td> ${music.listeners}</td>
+        <td> ${music.listeners} listener</td>
       </tr`;
     });
     document.getElementById('music-body').innerHTML = musicaElements;
@@ -244,7 +244,7 @@ function cargarJazz() {
           <td>${i + 1}</td>
           <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
           <td><a href= ${music.url}><b>${music.name}</b></a></td>
-          <td> ${music.listeners}</td>
+          <td> ${music.listeners} listeners</td>
         </tr`;
       });
       document.getElementById('music-body').innerHTML = musicaElements;
@@ -302,7 +302,7 @@ function cargarTheBiggest() {
           <td>${i + 1}</td>
           <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
           <td><a href= ${music.url}><b>${music.name}</b></a></td>
-          <td> ${music.listeners}</td>
+          <td> ${music.listeners} listeners</td>
         </tr`;
       });
     
