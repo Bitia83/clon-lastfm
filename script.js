@@ -31,7 +31,7 @@ function cargarOverview() {
     /* Fin del código para que se ordenen los datos por número de listeners de mayor a menor */
     for (let i = 0; i < music.length; i++) {
     musicaElements += `
-        <tr>
+         <tr>
           <td><a><i class="fa-solid fa-play"></i></a></td>
           <td>${i + 1}</td>
           <td><a href= ${music[i].artist.url}> ${music[i].artist.name}</a></td>
@@ -79,12 +79,12 @@ function cargarTenList() {
       mayor a menor */
         tenListArray.forEach((music, i) => {
           musicaElements += `
-        <tr>
-        <td><a><i class="fa-solid fa-play"></i></a></td>
-        <td>${i + 1}</td>
-        <td> ${music.artist.name}</td>
-        <td><b>${music.name}</b></td>
-        <td> ${music.listeners}</td>
+          <tr>
+            <td><a><i class="fa-solid fa-play"></i></a></td>
+            <td>${i + 1}</td>
+            <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
+            <td><a href= ${music.url}><b>${music.name}</b></a></td>
+            <td> ${music.listeners}</td>
         </tr`;
     });
     document.getElementById('music-body').innerHTML = musicaElements;
@@ -109,11 +109,11 @@ function cargarTenList() {
       rockArray.forEach((music, i) => {
         musicaElements += `
           <tr>
-          <td><a><i class="fa-solid fa-play"></i></a></td>
-          <td>${i + 1}</td>
-          <td> ${music.artist.name}</td>
-          <td><b>${music.name}</b></td>
-          <td> ${music.listeners}</td>
+            <td><a><i class="fa-solid fa-play"></i></a></td>
+            <td>${i + 1}</td>
+            <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
+            <td><a href= ${music.url}><b>${music.name}</b></a></td>
+            <td> ${music.listeners}</td>
           </tr`;
       });
       document.getElementById('music-body').innerHTML = musicaElements;
@@ -138,13 +138,13 @@ function cargarTenList() {
       /* Fin del código para que se ordenen los datos por número de listeners de mayor a menor */
     hipHopArray.forEach((music, i) => {
       musicaElements += `
-        <tr>
+      <tr>
         <td><a><i class="fa-solid fa-play"></i></a></td>
         <td>${i + 1}</td>
-        <td> ${music.artist.name}</td>
-        <td><b>${music.name}</b></td>
+        <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
+        <td><a href= ${music.url}><b>${music.name}</b></a></td>
         <td> ${music.listeners}</td>
-        </tr`;
+      </tr`;
     });
     document.getElementById('music-body').innerHTML = musicaElements;
   });
@@ -168,13 +168,13 @@ function cargarTenList() {
     /* Fin del código para que se ordenen los datos por número de listeners de mayor a menor */
     indieArray.forEach((music, i) => {
       musicaElements += `
-        <tr>
+      <tr>
         <td><a><i class="fa-solid fa-play"></i></a></td>
         <td>${i + 1}</td>
-        <td> ${music.artist.name}</td>
-        <td><b>${music.name}</b></td>
+        <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
+        <td><a href= ${music.url}><b>${music.name}</b></a></td>
         <td> ${music.listeners}</td>
-        </tr`;
+      </tr`;
     });
     document.getElementById('music-body').innerHTML = musicaElements;
   });
@@ -197,13 +197,13 @@ function cargarJazz() {
     /* Fin del código para que se ordenen los datos por número de listeners de mayor a menor */
     jazzArray.forEach((music, i) => {
       musicaElements += `
-        <tr>
+      <tr>
         <td><a><i class="fa-solid fa-play"></i></a></td>
         <td>${i + 1}</td>
-        <td> ${music.artist.name}</td>
-        <td><b>${music.name}</b></td>
+        <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
+        <td><a href= ${music.url}><b>${music.name}</b></a></td>
         <td> ${music.listeners}</td>
-        </tr`;
+      </tr`;
     });
     document.getElementById('music-body').innerHTML = musicaElements;
   });
@@ -226,13 +226,13 @@ function cargarJazz() {
       /* Fin del código para que se ordenen los datos por número de listeners de mayor a menor */
       reggaeArray.forEach((music, i) => {
         musicaElements += `
-          <tr>
+        <tr>
           <td><a><i class="fa-solid fa-play"></i></a></td>
           <td>${i + 1}</td>
-          <td> ${music.artist.name}</td>
-          <td><b>${music.name}</b></td>
+          <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
+          <td><a href= ${music.url}><b>${music.name}</b></a></td>
           <td> ${music.listeners}</td>
-          </tr`;
+        </tr`;
       });
       document.getElementById('music-body').innerHTML = musicaElements;
     });
@@ -264,12 +264,13 @@ function cargarTheBiggest() {
       console.log(biggestArray);
       biggestArray.forEach((music, i) => {
         musicaElements += `
-            <tr>
-            <td>${i + 1}</td>
-         <td> ${music.artist.name}</td>
-        <td><b>${music.name}</b></td>
-         <td> ${music.listeners}</td>
-            </tr`;
+        <tr>
+          <td><a><i class="fa-solid fa-play"></i></a></td>
+          <td>${i + 1}</td>
+          <td><a href= ${music.artist.url}> ${music.artist.name}</a></td>
+          <td><a href= ${music.url}><b>${music.name}</b></a></td>
+          <td> ${music.listeners}</td>
+        </tr`;
       });
       document.getElementById('music-body').innerHTML = musicaElements;
     })
