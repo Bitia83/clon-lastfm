@@ -147,6 +147,8 @@ section{
         border:   #ccc;
         border-collapse: collapse;
          width: 100%;
+         table-layout: auto;
+         display: table;
          
          }
 
@@ -155,6 +157,7 @@ section{
         padding: .35em;
         text-decoration: none;
         color: #000000;
+        margin-bottom: .625em;
       }
 
       table td {
@@ -167,7 +170,8 @@ section{
       table tr:nth-child(even) {
         background: #E6E6E6;  
       }
-      
+
+    
 /* Colores:
    --color-primary:  #222
    --color-secondary: rgba(110, 69, 51, 1);
