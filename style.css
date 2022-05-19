@@ -119,19 +119,17 @@ header>section {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 6em;
+    margin-bottom: 30px;
 }
 .ul-menu-lista{
-    padding-top: 90px ;
-    width: 60%;
+    padding-top: 40px;
     display: flex;
     justify-content: space-around;
-   
+    align-items: center;
 }
 .ul-menu-lista li {
-    padding-left: 17px;
-    padding-right: 17px;
-    }
+   padding: 15px;
+}
 
 .li-menu-lista:hover  {
     color: #B90000;
@@ -143,43 +141,35 @@ section{
     /*background-color: black;*/
 }
 
-    table {
-        border:   #ccc;
-        border-collapse: collapse;
-         width: 100%;
-         table-layout: auto;
-         display: table;
-         
-         }
+h1 {
+    padding: 10px;
+}
 
-      table tr {
-        border:  1px #ddd;
-        padding: .35em;
-        text-decoration: none;
-        color: #000000;
-        margin-bottom: .625em;
-      }
+table{
+    width: 100%;
+    border:   #ccc;
+}
 
-      table td {
-        padding: .625em;
-        text-align: left;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-      table tr:nth-child(even) {
-        background: #E6E6E6;  
-      }
+tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: rgba(246, 247, 242, 0.495);
+  }
+   
 
-    
-/* Colores:
-   --color-primary:  #222
-   --color-secondary: rgba(110, 69, 51, 1);
-   --color-focus-menu: #B90000;
-   --color-background: #fff;
-   --color-list-odd: #f2f2f2;
+table tr {
+    border:  1px #ddd;
+    padding: .35em;
+    text-decoration: none;
+ }
 
-*/
-
-/* Utiliza  la propiedad counter-increment: step-counter; para pintar el número de la canción
- */
+table td {
+    padding: .625em;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+      
+      
