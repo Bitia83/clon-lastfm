@@ -1,5 +1,11 @@
 # Proyecto last.fm
 
+## github-pages (ejercicio terminado)
+
+- link (https://bitia83.github.io/clon-lastfm/)
+
+
+
 ## Descripción
 
 Generaremos un fake de la web  **[last.fm](https://www.last.fm/home)**, web de playlists de canciones. El resultado se deberá parecer al que se muestra a continuación:
@@ -8,13 +14,6 @@ Generaremos un fake de la web  **[last.fm](https://www.last.fm/home)**, web de p
 
 
 ## Instrucciones
-
-
-## github-pages (ejercicio terminado)
-
-- link (https://bitia83.github.io/clon-lastfm/)
-
-
 
 
 ### Pasos que tienes que seguir para entregar el ejercicio:
