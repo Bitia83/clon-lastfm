@@ -9,6 +9,14 @@ Generaremos un fake de la web  **[last.fm](https://www.last.fm/home)**, web de p
 
 ## Instrucciones
 
+
+## github-pages (ejercicio terminado)
+
+- link (https://bitia83.github.io/clon-lastfm/)
+
+
+
+
 ### Pasos que tienes que seguir para entregar el ejercicio:
 
 1. Realiza un fork del repositorio.
